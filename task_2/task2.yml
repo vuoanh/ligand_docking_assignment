@@ -1,0 +1,10 @@
+name: task2_function
+channels:
+  - conda-forge
+  - anaconda
+dependencies:
+  - python=3.12
+  - jupyterlab=4.1.6
+  - numpy=1.26.4
+  - rdkit=2024.03.1
+  - biopython=1.78
