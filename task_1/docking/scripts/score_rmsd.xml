@@ -1,0 +1,19 @@
+<ROSETTASCRIPTS>
+
+	<SCOREFXNS>
+		<ScoreFunction name="ligand_soft_rep" weights="ligand_soft_rep">
+		</ScoreFunction>
+		<ScoreFunction name="hard_rep" weights="ligand">
+			<Reweight scoretype="fa_intra_rep" weight="0.005"/>
+		</ScoreFunction>
+	</SCOREFXNS>
+
+	<MOVERS>
+		<InterfaceScoreCalculator name="add_scores" chains="X" scorefxn="hard_rep" native="%%native%%"/> 
+	</MOVERS>
+	<PROTOCOLS>
+		<Add mover_name="add_scores"/>
+	</PROTOCOLS>
+
+</ROSETTASCRIPTS>
+

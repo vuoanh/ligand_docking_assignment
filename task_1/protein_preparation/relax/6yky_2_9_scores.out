@@ -1,0 +1,3 @@
+SEQUENCE: 
+SCORE: total_score dslf_fa13    fa_atr    fa_dun   fa_elec fa_intra_rep fa_intra_sol_xover4              fa_rep              fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb lk_ball_wtd       omega     p_aa_pp pro_close rama_prepro         ref yhh_planarity description 
+SCORE:   -1049.785     0.000 -1885.027   326.772  -559.923       13.184              59.206             189.021            1057.421     -87.316     -54.434     -53.147    -119.090     -50.587       9.937     -63.782    77.218     -18.974     109.225         0.511 6yky_2_9_6yky_2_0001

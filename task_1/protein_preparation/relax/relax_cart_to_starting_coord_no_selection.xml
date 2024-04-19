@@ -1,0 +1,41 @@
+<ROSETTASCRIPTS>
+    <SCOREFXNS>
+        <ScoreFunction name="r" weights="ref2015"/>
+        <ScoreFunction name="rw" weights="ref2015">
+            <Reweight scoretype="coordinate_constraint" weight="1.0"/>
+        </ScoreFunction>
+        <ScoreFunction name="rcw" weights="ref2015_cart">
+            <Reweight scoretype="coordinate_constraint" weight="1.0"/>
+        </ScoreFunction>
+    </SCOREFXNS>
+    <MOVERS>
+        # Constraint movers
+        <ClearConstraintsMover name="uncst"/>
+        <AtomCoordinateCstMover name="relax_cst" coord_dev="1.0" bounded="false" bound_width="0"
+            sidechain="true" native="false" func_groups="false"/>
+            # Relax
+        <VirtualRoot name="root" removable="1" />
+        <VirtualRoot name="remove" remove="1" />
+        <FastRelax name="relax" scorefxn="rw" ramp_down_constraints="true"
+            repeats="2" cartesian="false"/>
+        <FastRelax name="relax_cart" scorefxn="rcw" ramp_down_constraints="false"
+            repeats="1" cartesian="true"/>
+        <FastRelax name="relax_cart_ramp" scorefxn="rcw" ramp_down_constraints="true"
+            repeats="1" cartesian="true"/>
+        <ParsedProtocol name="relax_cycle">
+            <Add mover_name="root"/>
+            <Add mover_name="relax_cst"/>
+            <Add mover_name="relax"/>
+            <Add mover_name="relax_cart_ramp"/>
+            <Add mover_name="relax_cart"/>
+            <Add mover_name="remove"/>
+            <Add mover_name="uncst"/>
+            <Add mover_name="relax_cart"/>
+            <Add mover_name="relax_cart_ramp"/>
+        </ParsedProtocol>
+    </MOVERS>
+    <PROTOCOLS>
+        <Add mover_name="relax_cycle" />
+    </PROTOCOLS>
+    <OUTPUT scorefxn="REF2015"/>
+</ROSETTASCRIPTS>
