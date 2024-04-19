@@ -1,4 +1,4 @@
-# ODDITY_interview_assignment
+# Ligand_docking_assignment
 ## Task 1:
 The answer and explanation for the docking protocol/results can be found in `task_1/Task1.pdf` file.
 The top 10 docks models for each compound 18, 13, and 22 can be found in the folder `task_1/results`.
