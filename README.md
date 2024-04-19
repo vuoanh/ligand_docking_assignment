@@ -1,4 +1,4 @@
-# ODITY_interview_assignment
+# ODDITY_interview_assignment
 
 ## Task 2:
 The implementation and the test cases of the function are included in the iPython notebook: task2.ipynb
